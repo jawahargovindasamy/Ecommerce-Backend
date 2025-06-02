@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import connectDB from './Database/dbConfig.js';
 import authRoute from './Routers/authRoute.js';
 import productRoute from './Routers/productRoute.js';
+import cartRoute from './Routers/cartRoute.js';
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth',authRoute);
 app.use('/api/products',productRoute);
+app.use('/api/cart',cartRoute);
 
 const port = process.env.PORT || 4000;
 
