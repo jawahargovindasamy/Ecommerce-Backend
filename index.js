@@ -6,6 +6,7 @@ import authRoute from "./Routers/authRoute.js";
 import productRoute from "./Routers/productRoute.js";
 import cartRoute from "./Routers/cartRoute.js";
 import orderRoute from "./Routers/orderRoute.js";
+import paymentRoute from "./Routers/paymentRoute.js";
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/products", productRoute);
 app.use("/api/cart", cartRoute);
 app.use("/api/order", orderRoute);
+app.use("/api/payment", paymentRoute);
 
 const port = process.env.PORT || 4000;
 
