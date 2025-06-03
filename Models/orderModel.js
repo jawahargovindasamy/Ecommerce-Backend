@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-  userId: {
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,
@@ -25,15 +25,15 @@ const orderSchema = new mongoose.Schema({
     required: true,
     default: 0,
   },
-  status:{
+  status: {
     type: String,
-    enum: ["Pending", "Shipped", "cancelled","Delivered"],
+    enum: ["Pending", "Shipped", "cancelled", "Delivered"],
     default: "Pending",
   },
   createdAt: {
     type: Date,
     default: Date.now,
-  }
+  },
 });
 
 const Order = mongoose.model("Order", orderSchema);
