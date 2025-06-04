@@ -12,9 +12,10 @@ export const authMiddleware = async (req, res, next) => {
   }
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await User.findById(decoded.id).select("-password");
+    req.user = await User.findById(decoded._id).select("-password");
     next();
   } catch (error) {
     return res.status(500).json({ message: "Internal server error" });
   }
 };
+

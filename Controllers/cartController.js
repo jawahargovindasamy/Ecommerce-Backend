@@ -6,7 +6,7 @@ import Product from "../Models/productModel.js";
 
 export const addToCart = async (req, res) => {
   try {
-    const { productId, quantity } = req.params.id;
+    const { productId, quantity } = req.body;
     const product = await Product.findById(productId);
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
